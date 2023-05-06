@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Binding com Vue JS</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1 v-bind:title="tagMessage">{{message}}</h1>
+        <p style="font-size: 25px;">
+            O nome é: <b>{{person.name}}</b> e a sua idade: <b>{{person.age}}</b>
+        </p>
+
+        <h2>Texto maiúsculo: {{message.toUpperCase()}}</h2>
+
+        <span v-html="tag"></span>
+
+
+    </div>
+
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+
+    <script>
+       let app = new Vue({
+            el: '#app',
+            data: {
+                message: "Mensagem a ser exibida",
+                person:{
+                name: "Jorge Luiz",
+                age: "31"
+            },
+            tag: "<button>Clique aqui</button>",
+            tagMessage: "Mensagem do titulo do cabeçalho"
+            }
+            
+        })
+    </script>
+
+    
+</body>
+</html>
